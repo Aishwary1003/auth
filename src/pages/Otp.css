@@ -1,0 +1,152 @@
+.otp-page {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.otp-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.otp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(80, 80, 80, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.otp-modal {
+  position: relative;
+  width: 50%;
+  align-self: center;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 0;
+  padding: 36px 20px 28px;
+  text-align: center;
+}
+
+.otp-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-modal h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.otp-sub {
+  color: #9a9a9a;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.otp-slots {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.otp-slot {
+  width: 34px;
+  height: 34px;
+  border-bottom: 2px solid #cfcfcf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: #111;
+}
+
+.otp-slot--active {
+  border-bottom-color: #888;
+}
+
+.otp-timer {
+  color: #b5b5b5;
+  font-size: 14px;
+}
+
+.otp-resend {
+  color: var(--blue);
+  font-size: 14px;
+}
+
+.otp-keypad {
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #e8e8e8;
+}
+
+.otp-key {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #222;
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  transition: background 0.1s ease;
+}
+
+.otp-key:nth-child(3n) {
+  border-right: 0;
+}
+
+.otp-key:nth-last-child(-n + 3) {
+  border-bottom: 0;
+}
+
+.otp-key:active:not(.otp-key--empty) {
+  background: #f2f2f2;
+}
+
+.otp-key--empty {
+  pointer-events: none;
+}
+
+@media (max-height: 700px) {
+  .otp-modal {
+    padding: 28px 20px 22px;
+  }
+
+  .otp-modal h1 {
+    font-size: 26px;
+  }
+
+  .otp-sub {
+    margin-bottom: 28px;
+  }
+
+  .otp-slots {
+    margin-bottom: 18px;
+  }
+
+  .otp-key {
+    min-height: 54px;
+  }
+}
